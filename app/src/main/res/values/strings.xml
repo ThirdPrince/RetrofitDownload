@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RetrofitDownload</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">下载图片LiveData</string>
+    <string name="second_fragment_label">下载图片Flow</string>
+    <string name="next">Next</string>
+    <string name="download">download</string>
+    <string name="previous">Previous</string>
+
+</resources>
