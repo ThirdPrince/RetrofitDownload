@@ -4,6 +4,9 @@ import android.app.Application
 import android.content.Context
 import com.blankj.utilcode.util.CrashUtils
 
+/**
+ * megumethod.com/blog/downloading-files-retrofit-library
+ */
 class MyApp : Application() {
 
     override fun onCreate() {
