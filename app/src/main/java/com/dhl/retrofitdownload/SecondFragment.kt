@@ -1,18 +1,23 @@
 package com.dhl.retrofitdownload
 
+import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.dhl.retrofitdownload.databinding.FragmentSecondBinding
 import com.dhl.retrofitdownload.model.DownloadState
 import com.dhl.retrofitdownload.vm.ImageViewModel
 import com.dhl.retrofitdownload.vm.ImageViewModelByFlow
+import kotlinx.coroutines.launch
 import java.io.File
 
 /**
@@ -40,8 +45,12 @@ class SecondFragment : Fragment() {
 
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+    
 
         binding.buttonFirst.setOnClickListener {
             lifecycleScope.launchWhenCreated {
@@ -49,6 +58,11 @@ class SecondFragment : Fragment() {
                 imageViewModel.getImage2(targetFile.absolutePath).collect{
                     downloadState ->
                     when (downloadState) {
+
+                        is DownloadState.Loading ->{
+                            binding.buttonFirst.text = "正在下载中"
+                        }
+
                         is DownloadState.Downloading -> {
                             binding.buttonFirst.text = "${downloadState.progress}%"
                         }

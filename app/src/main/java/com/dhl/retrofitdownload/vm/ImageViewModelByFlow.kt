@@ -43,8 +43,7 @@ class ImageViewModelByFlow : ViewModel() {
     suspend fun getImage2(image: String): Flow<DownloadState> {
         viewModelScope.launch(exception){
             val targetFile = File(image)
-            _dataFlow.emit(DownloadState.Downloading(0))
-
+            _dataFlow.emit(DownloadState.Loading)
             var responseBody = RetrofitManager.imageService.getImage2()
             if(responseBody.isSuccessful){
                 responseBody.body()?.saveFile(targetFile)

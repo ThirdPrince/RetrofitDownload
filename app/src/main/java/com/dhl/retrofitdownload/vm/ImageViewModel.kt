@@ -45,7 +45,7 @@ class ImageViewModel :ViewModel() {
     fun getImage( image:String):LiveData<DownloadState>{
         viewModelScope.launch(exception) {
             val targetFile = File(image)
-            _downloadLiveData.postValue(DownloadState.Downloading(0))
+            _downloadLiveData.postValue(DownloadState.Loading)
             var response = RetrofitManager.imageService.getImage()
             if(response.isSuccessful) {
                 response.body()?.let { saveFile(it, targetFile) }

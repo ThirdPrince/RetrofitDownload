@@ -5,6 +5,8 @@ package com.dhl.retrofitdownload.model
  * @author dhl
  */
 sealed class DownloadState{
+
+    object Loading : DownloadState()
     data class Downloading(val progress: Int) : DownloadState()
     data class DownloadFinish(val filePath:String):DownloadState()
     data class Failed(val error: String? = null) : DownloadState()

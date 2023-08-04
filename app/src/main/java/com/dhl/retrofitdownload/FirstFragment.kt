@@ -46,6 +46,10 @@ class FirstFragment : Fragment() {
             imageViewModel.getImage(targetFile.absolutePath)
                 .observe(viewLifecycleOwner) { downloadState ->
                     when (downloadState) {
+
+                        is DownloadState.Loading ->{
+                            binding.buttonFirst.text = "正在下载中"
+                        }
                         is DownloadState.Downloading -> {
                             binding.buttonFirst.text = "${downloadState.progress}%"
                         }
