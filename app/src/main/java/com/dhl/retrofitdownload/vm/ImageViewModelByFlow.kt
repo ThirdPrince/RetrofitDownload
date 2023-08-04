@@ -21,6 +21,7 @@ import java.io.FileOutputStream
 /**
  * 下载图片测试 Flow
  * @author dhl
+ * Flow 版本
  */
 class ImageViewModelByFlow : ViewModel() {
 

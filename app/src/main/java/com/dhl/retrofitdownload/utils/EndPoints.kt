@@ -1,5 +1,8 @@
 package com.dhl.rcymvvm.utils
 
+/**
+ * 必应图片
+ */
 class EndPoints {
 
     companion object{

@@ -19,6 +19,7 @@ import java.io.FileOutputStream
 
 /**
  * 下载图片测试
+ * LiveData 版本
  * @author dhl
  */
 class ImageViewModel :ViewModel() {

@@ -1,6 +1,6 @@
 ## Download files with Retrofit and show progress
-
-这是一个基于 Kotlin 协程和 Retrofit 展示下载文件并且显示进度
+ 
+使用 Kotlin 协程和 Retrofit 展示下载文件并且显示进度
 
 ## 介绍
 
@@ -10,7 +10,7 @@
 - LiveData：用于观察 ViewModel 中的数据，并在数据更改时更新 UI。
 - flow：加强版本额LiveData。
 
-此外，该应用程序还使用了 Kotlin 协程来管理异步操作，并使用 Retrofit 和 GSON 库从网络中检索数据。
+此外，该应用程序还使用了 Kotlin 协程来管理异步操作，并使用 Retrofit 和 GSON 库从网络下载文件(这个demo 使用图片来展示)。
 
 ## 功能
 
