@@ -35,7 +35,7 @@ object RetrofitManager {
             .addInterceptor(logging)
             .connectTimeout(20, TimeUnit.SECONDS)
             .readTimeout(20, TimeUnit.SECONDS)
-            //.proxy(Proxy.NO_PROXY)
+
 
     }
 
